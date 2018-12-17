@@ -7,3 +7,20 @@ inujarashi:
   name: Example Inujarashi
   email: example@inujarashi.com
   password_digest: <%= User.digest('neko2474') %>
+
+sarujarashi:
+  name: Example Sarujarashi
+  email: example@sarujarashi.com
+  password_digest: <%= User.digest('neko2474') %>
+
+kijijarashi:
+  name: Example kijijarashi
+  email: example@kijijarashi.com
+  password_digest: <%= User.digest('neko2474') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('neko2474') %>
+<% end %>
