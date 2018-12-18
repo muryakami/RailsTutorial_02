@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_id: 1
+  detail: MyText
+  time: 1
+  journal: one
+
+two:
+  task_id: 1
+  detail: MyText
+  time: 1
+  journal: two
