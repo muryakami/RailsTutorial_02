@@ -9,4 +9,13 @@
             </h1>
         </section>
     </aside>
+    <div class="col-md-8">
+        <% if @user.journals.any? %>
+            <h3>Journals (<%= @user.journals.count %>)</h3>
+            <ol class="journals">
+                <%= render @journals %>
+            </ol>
+            <%= will_paginate @journals %>
+        <% end %>
+    </div>
 </div>
