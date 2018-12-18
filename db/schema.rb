@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181218120727) do
+ActiveRecord::Schema.define(version: 20181218162503) do
 
   create_table "journal_tasks", force: :cascade do |t|
-    t.integer "task_id"
-    t.text "detail"
-    t.integer "time"
     t.integer "journal_id"
+    t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["journal_id", "task_id"], name: "index_journal_tasks_on_journal_id_and_task_id", unique: true
     t.index ["journal_id"], name: "index_journal_tasks_on_journal_id"
+    t.index ["task_id"], name: "index_journal_tasks_on_task_id"
   end
 
   create_table "journals", force: :cascade do |t|
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20181218120727) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_journals_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_journals_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "time"
+    t.text "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
