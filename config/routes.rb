@@ -10,7 +10,17 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
-  resources :journals, only: [:create, :destroy]
-  resources :tasks, only: [:create, :destroy]
+  # resources :journals, only: [:create, :edit, :update, :destroy] do
+  #   collection do
+  #     get :tasks
+  #   end
+  # end
+  resources :journals, only: [:create, :edit, :update, :destroy] do
+    resources :tasks, only: [:create, :destroy]
+    collection do
+      get :tasks
+    end
+  end
+  # resources :journal_tasks, only: [:create, :destroy]
   
 end

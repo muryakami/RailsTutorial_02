@@ -1,0 +1,19 @@
+<% provide(:title, "Edit journal") %>
+
+<h1>Update this journal</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@journal) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :time %>
+      <%= f.number_field :time, class: 'form-control' %>
+
+      <%= f.label :detail %>
+      <%= f.text_field :detail, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

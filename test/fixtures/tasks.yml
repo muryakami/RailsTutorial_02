@@ -1,1 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  time: 60
+  detail: "I just ate an orange!"
+
+two:
+  time: 90
+  detail: "Check out the @tauday site by @mhartl: http://tauday.com"
+
+three:
+  time: 10
+  detail: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+
+four:
+  time: 240
+  detail: "Writing a short test"

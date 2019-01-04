@@ -1,0 +1,9 @@
+<li id="task-<%= task.id %>">
+  <%= link_to gravatar_for(task.journal_task.journal.user, size: 50), task.journal_task.journal.user %>
+  <span class="user"><%= link_to task.journal_task.journal.user.name, task.journal_task.journal..user %></span>
+  <span class="time"><%= task.time %></span>
+  <span class="detail"><%= task.detail %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(task.created_at) %> ago.
+  </span>
+</li>

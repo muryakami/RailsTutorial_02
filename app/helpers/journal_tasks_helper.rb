@@ -1,0 +1,2 @@
+module JournalTasksHelper
+end
